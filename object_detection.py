@@ -13,7 +13,7 @@ import nest_asyncio
 
 nest_asyncio.apply()
 
-my_token = "7485186086:AAG6T4-iMv9LfQpytTfKjHYxmYPgeyWy3R8"
+my_token = "XXX"
 
 # Tạo bot
 bot = telegram.Bot(token=my_token)
@@ -53,8 +53,8 @@ while True:
                     name_object = "_".join(re.split("[:.]",f'{datetime.datetime.now()}')) + '.jpg'
                     path = os.path.join(root,name_object)
                     cv2.imwrite(path,frame[y_min:y_max,x_min:x_max])
-                    asyncio.run(bot.sendPhoto(chat_id="6940850899", photo=open(path, "rb"), caption="Phát hiện chuyển động!"))
-                    asyncio.run(bot.sendPhoto(chat_id="5115269968", photo=open(path, "rb"), caption="Phát hiện chuyển động!"))
+                    asyncio.run(bot.sendPhoto(chat_id="XXX", photo=open(path, "rb"), caption="Phát hiện chuyển động!"))
+                    asyncio.run(bot.sendPhoto(chat_id="", photo=open(path, "rb"), caption="Phát hiện chuyển động!"))
                     cv2.rectangle(frame, (x_min, y_min), (x_max, y_max), (0, 255, 0))
                     cv2.putText(frame, name,(x_min+5,y_min+5),cv2.FONT_HERSHEY_SIMPLEX,0.5,(255,0,0),2)
     cv2.imshow("window",frame)
